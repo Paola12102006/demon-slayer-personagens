@@ -1,0 +1,228 @@
+body {
+    min-height: 100vh;
+    background-color: #f01c25;
+}
+
+.d-none {
+    display: none;
+}
+
+.menu,
+.menu .links-personagens-menu i {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    gap: 6px;
+}
+
+.menu .links-personagens-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.menu .links-personagens-menu i {
+    background-color: #f01c25;
+    color: #eee;
+    font-size: 30px;
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    transition: .4s ease;
+    margin-left: 5px;
+}
+
+.menu .links-personagens-menu .links-menu {
+    position: absolute;
+    top: 80%;
+    left: 0%;
+    width: 90px;
+    color: #eee;
+    opacity: 0;
+}
+
+.menu .links-personagens-menu:hover .links-menu {
+    opacity: 1;
+}
+
+.menu .links-personagens-menu .links-menu-li {
+    background-color: #f01c25;
+    padding: 4px 5px;
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+    font-size: 15px;
+    transition: .3s ease;
+}
+
+.menu .links-personagens-menu .links-menu-li:hover {
+    background-color: #b90f18;
+    cursor: pointer;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.btns {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 180px;
+    padding: 30px 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: #0000004d;
+}
+
+.btns .btn {
+    width: 120px;
+    border-radius: 35%;
+    cursor: pointer;
+    transition: transform .3s ease, border-radius .5s ease;
+}
+
+.btns .btn.selecionado {
+    transform: scale(1.2);
+    border-radius: 50%;
+    box-shadow: 0 0 10px #f01c25;
+}
+
+.personagens {
+    height: 100vh;
+}
+
+.personagens::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    height: 100%;
+    width: 450px;
+    box-shadow: 10px 0px 90px 150px #000;
+}
+
+.personagens .personagem {
+    display: none;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.personagens .personagem.selecionado {
+    display: flex;
+}
+
+.conteudo {
+    left: 40px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 560px;
+    padding: 10px 0 0;
+}
+
+.conteudo .logo {
+    background-size: cover;
+    margin-bottom: 15px;
+    background-image: url(../imgs/logo-demon-slayer.png);
+    width: 162px;
+    height: 153px;
+}
+
+.conteudo .nome-personagem {
+    color: #e9e8e8;
+    font-size: 48px;
+    font-family: 'Secular One', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.conteudo .descricao {
+    color: #ddd;
+    font-family: 'Rubik', sans-serif;
+    overflow-y: auto;
+    max-height: 350px;
+    padding-right: 10px;
+}
+
+.conteudo .descricao p {
+    line-height: 23px;
+}
+
+.conteudo .descricao p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 1120px) {
+    .menu .links-personagens-menu i {
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .menu .links-personagens-menu .links-menu {
+        top: 130%;
+    }
+
+    .btns {
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+        padding: 15px 20px;
+    }
+
+    .btns .btn {
+        width: 80px;
+    }
+
+    .personagens::after {
+        top: 80%;
+        width: 100vw;
+    }
+
+    .personagens .personagem {
+        flex-direction: column;
+    }
+
+    .personagens .personagem .img {
+        object-fit: cover;
+    }
+
+    .conteudo {
+        left: 0;
+        bottom: 5px;
+        width: 100vw;
+        height: max-content;
+        padding: 0;
+        justify-content: space-between;
+    }
+
+    .conteudo .logo {
+        align-self: flex-start;
+        margin: 0 0 0 5px;
+        height: 131px;
+        width: 138px;
+    }
+
+    .conteudo .nome-personagem {
+        font-size: 36px;
+        margin: 25px 0 0 0;
+    }
+
+    .conteudo .descricao {
+        width: 96%;
+        max-height: 230px;
+    }
+}
